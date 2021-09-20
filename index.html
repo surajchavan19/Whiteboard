@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Whiteboard</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+<style media="screen">
+  #div{
+    width: 900;
+    height: 80vh;
+    border: 1px solid black;
+  }
+</style>
+
+  </head>
+  <body>
+   <div id="div">
+
+   </div>
+   <button id="button" style="margin-top:10px;"> Save Image</button>
+  </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" charset="utf-8"></script>
+<script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/drawingboard.js/0.4.2/drawingboard.min.js" charset="utf-8"></script>
+
+<script>
+
+  $(document).ready(function(){
+    var imageBoard = new DrawingBoard.Board('div', {
+      background: "#fff",
+    	color: "#ff0",
+    	size: 30,
+    	controls: [
+        'Color',
+    		{ Size: { type: "range" } },
+    		{ Navigation: { back: true, forward: true } },
+    		'DrawingMode'
+    	],
+    	webStorage: 'local'
+});
+    $("#button").click(function(){
+      domtoimage.toBlob(document.getElementById('div'))
+    .then(function (blob) {
+        window.saveAs(blob, 'photo.png');
+    });
+    })
+  })
+
+</script>
+
+</html>
