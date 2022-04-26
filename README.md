@@ -1,19 +1,19 @@
 # Whiteboard
 [Click here to view the website](https://surajchavan19.github.io/Whiteboard/)
 
-##Introduction
+## Introduction
 Whiteboard is a simple whiteboard which you can use to express your creativity and imagination. 
 
-##Technologies Used
+## Technologies Used
 HTML, CSS, JavaScript and drawingboard.js.
 
-##Features
+## Features
 1) Different brush colours
 2) Increase/Decrease brush size
 3) Undo/Redo/Clear option
 4) Eraser 
 5) Colour fill option
 
-##Reference 
+## Reference 
 [Drawingboard.js](https://github.com/Leimi/drawingboard.js/)
 
